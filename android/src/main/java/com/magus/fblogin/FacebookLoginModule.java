@@ -144,6 +144,7 @@ public class FacebookLoginModule extends ReactContextBaseJavaModule implements A
             map.putString("type", type);
             map.putString("provider", "facebook");
             map.putArray("declinedPermissions", getDeclinedPermissions(accessToken));
+            map.putString("token", accessToken.getToken());
 
             if(type.equals(CALLBACK_TYPE_SUCCESS)){
                 mTokenCallback.invoke(null, map);
